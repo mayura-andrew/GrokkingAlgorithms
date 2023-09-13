@@ -12,7 +12,11 @@ def selectionSort(arr):
     newArr = []
     for i in range(len(arr)):
         smallest = findSmallest(arr)
+        #print(smallest)
         newArr.append(arr.pop(smallest))
+       # print(arr)
+    #print(newArr)
+    #print(arr)
     return newArr
 
 print(selectionSort([5, 3, 6, 3, 10]))
