@@ -5,7 +5,7 @@ This README provides code examples and explanations for the algorithms covered i
 ## Table of Contents
 
 - [Binary Search](#binary-search)
-- [Simple (Linear) Search](#linear-search)
+- [Simple (Linear) Search](#simple-search)
 - [Selection Sort](#selection-sort)
 - [Recursion](#recursion)
 - [Quicksort](#quicksort)
@@ -41,7 +41,7 @@ def binary_search(list, target):
 
 ```
 
-## Simple (Linear) Search 
+## Simple Search 
 
 ```python
 def linear_search(arr, target):
