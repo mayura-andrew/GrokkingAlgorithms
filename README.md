@@ -5,6 +5,7 @@ This README provides code examples and explanations for the algorithms covered i
 ## Table of Contents
 
 - [Binary Search](#binary-search)
+- [Simple (Linear) Search](#linear-search)
 - [Selection Sort](#selection-sort)
 - [Recursion](#recursion)
 - [Quicksort](#quicksort)
