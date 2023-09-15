@@ -101,8 +101,6 @@ def selectionSort(arr):
         newArr.append(arr.pop(smallest))
     return newArr
 
-print selectionSort([5, 3, 6, 3, 10])
-
 # Time Complexity: O(n2) 
 ```
 
@@ -123,10 +121,32 @@ def factorial(n):
     else:
         return n * factorial(n-1)   # recursion 
         
+    # Time Complexity: O(n) - Linear 
+
 ```
 
 .....
 
+## Quick Sort 
+Divide and Conquer (D&C) works by breaking a problem down into smaller and smaller pieces. If you're using D&C on a list, the base case is probably an empty array or an array with on element.
+If you're implementing quicksort, choose a random element as the pivot. The average runtime of quicksort is O(n log n)!
+The constant in Big O notation can matter sometimes. That's why quicksort faster than merge sort.
+The constant almost never matters for simple search versus binary search, because O(log n) is so much faster than 0(n) when your list gets big.
 
+```python
+def quickSort(array):
+    if len(array) < 2:
+        return array
+    else:
+        pivot = array[0]
+        less = [i for i in array[1:] if i <= pivot] # sub-array of all the elements less than the pivot
+        greater = [i for i in array[1:] if i > pivot] # sub-array of all the elements greater than the pivot
+        return quickSort(less) + [pivot] + quickSort(greater)
+
+# Time complexity - O(n log n)
+# worst case - O(n^2)
+# average case - O(n log n) 
+# Quick Sort is unique because its speed depends on the pivot you choose.
+```
 ### Credits goes to Aditya Y. Bhargava - grokking algorithms Book
 
