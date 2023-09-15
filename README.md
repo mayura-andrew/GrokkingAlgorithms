@@ -125,8 +125,6 @@ def factorial(n):
 
 ```
 
-.....
-
 ## Quick Sort 
 Divide and Conquer (D&C) works by breaking a problem down into smaller and smaller pieces. If you're using D&C on a list, the base case is probably an empty array or an array with on element.
 If you're implementing quicksort, choose a random element as the pivot. The average runtime of quicksort is O(n log n)!
