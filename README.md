@@ -17,7 +17,13 @@ This README provides code examples and explanations for the algorithms covered i
 
 ## Binary Search
 
-Binary search is a fundamental algorithm for efficiently searching for an element in a sorted array. It divides the search space in half with each step.
+Binary search is a fundamental algorithm for efficiently searching for an element in a sorted array. 
+It divides the search space in half with each step. 
+Binary search is a lot faster than simple search. 
+O(log n) is faster than O(n), but it gets a lot faster once the list of items you're searching through grows. 
+Algorithm  speed isn't measured in seconds. 
+Algorithm times are measured in terms of growth of an algorithm. 
+Algorithm times are written in Big O notation.
 
 
 ```python
@@ -69,6 +75,13 @@ else:
 
 Selection sort is a neat algorithm, but it's not very fast. Quicksort is a faster sorting algorithm that only takes O(n log n) time. 
 
+Arrays allows fast reads. - O(1)  
+List [Read] - O(n)
+Linked lists allow fast inserts and deletes - O(1) 
+Arrays[Insert && Delete] - O(n)
+
+All elements in the array should be the same type (all ints, all doubles, and so on). 
+
 ```python
 
 def findSmallest(arr):
@@ -91,3 +104,29 @@ def selectionSort(arr):
 print selectionSort([5, 3, 6, 3, 10])
 
 # Time Complexity: O(n2) 
+```
+
+## Recursion 
+
+Recursion is when a function calls itself. 
+Every recursive function has two case: the base case amd the recursive case. 
+A stack has two operations: push and pop; 
+The stack plays a big part in recursion. 
+All functions calls go onto the call stack. 
+The call stack can get very large, which takes up a lot of memory.
+
+```python
+
+def factorial(n):
+    if (n == 1):
+        return 1 # Base Case
+    else:
+        return n * factorial(n-1)   # recursion 
+        
+```
+
+.....
+
+
+### Credits goes to Aditya Y. Bhargava - grokking algorithms Book
+
