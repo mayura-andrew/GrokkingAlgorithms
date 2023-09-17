@@ -212,5 +212,57 @@ delete O(1)         O(n)        O(n)     O(1)
 '''
 
 ```
+
+## Breadth-First Search
+
+Graphs are a way to model how different things are connected to one another. It consists of several nodes.
+To find the shortest path, there are two questions that breadth-first search can answer for you:
+> Quection type 1 - Is there a path from node A to node B ? 
+> Quection type 2 - What is the shortest path from node A to node B ? 
+
+Queues - there are two operations in queues, enqueue and dequeue
+ENQUEUE - Add an item to the queue == PUSH
+DEQUEUE - Take and item off the queue == POP
+
+The queue is called a FIFO data structure: First In, First Out
+The Stack is a LIFO data structure:  Last In, First Out
+
+```python
+from collections import deque
+
+# Define the graph with relationships
+graph = {
+    "you": ["alice", "bob", "claire"],
+    "bob": ["anuj", "peggy"],
+    "claire": ["thom", "jonny"],
+    "anuj": [],
+    "peggy": [],
+    "thom": [],
+    "jonny": []
+}
+
+def search(name):
+    search_queue = deque()
+    search_queue += graph[name]
+    searched = []
+    while search_queue:
+        person = search_queue.popleft()
+        if person not in searched and person in graph:
+            if person_is_seller(person):
+                print(person + " is a mango seller!")
+                return True
+            else:
+                search_queue += graph[person]
+                searched.append(person)
+    return False
+
+def person_is_seller(name):
+    return name[-1] == 'm'  # Check if the name ends with 'mango'
+
+search("you")
+'''
+Breadth-first search takes O(number of people + number of edges), and it's more commonly written as O(V+E) V for number of vertices, E for number of edges.
+'''
+```
 ### Credits goes to Aditya Y. Bhargava - grokking algorithms Book
 
