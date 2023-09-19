@@ -348,5 +348,36 @@ def find_lowest_cost_node(costs):
 '''
 
 ```
+
+## Greedy Algorithms
+
+Greedy algorithms are a class of algorithms that make locally optimal choices at each step with the hope of finding a global optimum. These algorithms are straightforward to implement and are often used for optimization problems. However, they may not always guarantee the best possible solution.
+Greedy algorithms are easy to write and fast to run, so they make good approximation algorithms.
+If you have an NP-complete problem, your best bet is to use an approximation algorithm.
+
+```python
+
+def fractional_knapsack(items, capacity):
+    items.sort(key=lambda x: x[1] / x[0], reverse=True)
+    total_value = 0
+    current_weight = 0
+
+    for item in items:
+        if current_weight + item[0] <= capacity:
+            total_value += item[1]
+            current_weight += item[0]
+        else:
+            fraction = (capacity - current_weight) / item[0]
+            total_value += fraction * item[1]
+            break
+
+    return total_value
+
+items = [(2, 10), (3, 5), (5, 15), (7, 7), (1, 6)]
+capacity = 10
+max_value = fractional_knapsack(items, capacity)
+print(f"Maximum value in knapsack: {max_value}")
+
+```
 ### Credits goes to Aditya Y. Bhargava - grokking algorithms Book
 
